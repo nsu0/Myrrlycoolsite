@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+</head>
+<body>
+<style>
+#mainText {
+color: white;
+position: absolute;
+z-index: 10;
+background-color: black;
+font-size: 42px;
+}
+</style>
+<h2 id="mainText">WELCOME TO BOZO LAND</h2>
+<div id="group1"></div>
+<div id="group2"></div>
+<script>
+//other setup...
+var group1 = document.getElementById("group1");
+var group2 = document.getElementById("group2");
+
+//setup files ecc
+var files = [
+"Ahhh.jpg",
+"Appleaday.jpg",
+"Augh.jpg",
+"Beans.jpg",
+"Beard.jpeg",
+"Bird.jpg",
+"Boomerthings.png",
+"Bus.jpg",
+"Code.jpeg",
+"Cranberry.jpeg",
+"Cute.jpg",
+"Daleaf.jpg",
+"Dragoz.png",
+"Eat.jpeg",
+"Eathis.jpeg",
+"Eatnah.jpg",
+"Eatyea.jpg",
+"Faceno.jpg",
+"Frado.jpg",
+"Frik.png",
+"Frontugle.jpg",
+"Fune.jpg",
+"Galop.jpeg",
+"Gater.jpg",
+"Hehe.jpg",
+"Helplol.jpg",
+"Holymac.jpeg",
+"Hot.jpeg",
+"IMG-20220829-WA0005.jpg",
+"IMG-20220829-WA0007.jpg ",
+"IMG-20220829-WA0009.jpg",
+"IMG-20220829-WA0010.jpg",
+"IMG-20220829-WA0017.jpg",
+"IMG-20220829-WA0018.jpg",
+"IMG-20220829-WA0019.jpg",
+"IMG-20220829-WA0020.jpg",
+"IMG-20220829-WA0054.jpg",
+"Imdumsee.jpeg",
+"Inter.jpg",
+"Itsaysbad.jpeg",
+"Jesus.jpeg",
+"Jesuspray.gif",
+"Kfc.jpg",
+"Kirb.jpeg",
+"Kirb2.jpg",
+"Kript.jpeg",
+"Lashoe.jpeg",
+"Lemedbors.jpeg",
+"Lemoon.jpg",
+"Lilbrain.jpg",
+"Lionking.jpg",
+"Lmao.png",
+"Magang.jpg",
+"Lolface.jpg",
+"Mamouth.jpg",
+"Mcronald.jpeg",
+"Mestpid.jpg",
+"Middle.gif",
+"Minion.jpg",
+"Mom.jpg",
+"Monke1.jpg",
+"Monke2.jpg",
+"Monke3.jpg",
+"Mopika.jpg",
+"Nietza.jpeg",
+"Nou.jpg",
+"Nowonder.jpeg",
+//"0.jpg",
+"Oh.jpg",
+//"Ohford.jpg",
+"Pain.jpg",
+"Pikabuse.jpg",
+"Pikano.jpg",
+"Pikaye jpg",
+"Pixel.jpg",
+"Pokepika.jpg",
+"Poozo.jpeg",
+"Rekt.jpg",
+"Rice.jpg",
+"Roundbald.jpg",
+"Scanme.png",
+"Shrek.jpeg",
+"Shrekita.jpg",
+"Sign.jpg",
+"Skull.gif",
+"Sponge.jpg",
+"Squirky.gif",
+"Static.jpeg",
+"Statics.jpeg",
+"Steve.jpg",
+"Stup.jpg",
+"Sus.jpg",
+"Sussie.jpg",
+"Teb.jpg",
+"Tel.jpeg",
+"Trump.gif",
+"Uh.jpg",
+"Uhh.jpg",
+"Vomit.gif",
+"Waddahe.jpeg",
+"Wifibad.jpg",
+"Wta.png",
+"Wut.jpeg",
+];
+
+var txt = [
+"Hello my name is nobody and stupid",
+"User token = 929371903, %IP_ADRESS _undefined_",
+"Wake up, go to work, go home, free time, sleep,",
+"نصخصنسزسمايع هثخثخ٢عع٢٧ست",
+"我在床上拉屎，我烧了一座房子，我对一个公民生气，然后我逃跑了",
+"షిట్ షిట్ డర్టీ యాస్ ఫ్రీ షిట్ స్టుపిడ్ ఎరువు",
+"shut up frik up oh oh",
+"Never talk to strangers or trust them remember kids",
+"AMBER ALERT: Kidnapped kid, Name:???, Surname:???, Sex:???,*×£",
+"It feels soo good when i do that thing...",
+"🌈 gay rights are the best to respect LGBTQIA+!!!",
+"💩 shit on the bed ur a 🤡 bac",
+"⿌⧈⚿☸⸹‥⥹☧⿆⶞⹻♋⣦⌷┴⌺⏀K⍂⥮☮⛩⋌⚶Ⲡ⥾⚯⽌✹ⴈ☕┕⤪⋱⤔ⓖ⸡⭳Ⰴ⨄≔Ⳮ″♓⠒ⵄ⇗⨇⺳⃗↊☊ⶄ☴ⴷ℈⾶⛹↾⬫⃗⚣ⴝ⫵⾑ⶈ⫄⋣⎃Ⓚ⓽⟾♬⿞⎮⢮⠈⾻⍛⻼ⵝ⭾╘⮎⭑⨻⒦⮛⇡Ⳍ₫⳾♒⠁⠤ⵦ⫗Ɑ⎐ⶮ",
+"�� what in t�� has �ne b�g ����IAA	IAS	IAT	￼",
+"PRAY TO JESUS KIDDIES!",
+"Tide pods are pretty good to eat especcialy on pizza (better than salad and fruits)",
+"Hitler died by gunshot suicide in 1945 in his bunker (Führerbunker) at age of 56. NO NAZISM KIDS NAZISM SUCKS!!! GOOD THAT HITLER DIED!!!",
+"LGBTQIA+ haters = 💩",
+"World peace better than world war!!! Everything can be solved!",
+"I don't like people who cause negativity but who cause the opposite!",
+];
+
+//create imgs
+var id = 0;
+for (let i = 0; i < 700; i++) {
+id++;
+var img = document.createElement("img");
+img.style.position = "absolute";
+img.style.top = Math.floor(Math.random() * 5000);
+img.style.left = Math.floor(Math.random() * 500);
+img.style.width = Math.floor(Math.random() * 700);
+img.style.height = Math.floor(Math.random() * 500);
+img.style.zIndex = Math.floor(Math.random() * 5);
+if (Math.floor(Math.random() * 3) == 1) {
+img.class = "anim";
+}
+img.id = id;
+img.alt = id + " CHECK MY NAME IS OFFENSIVE IN MY COUNTRY STATE";
+document.body.style.backgroundImage = "url('https://crazymemesmaker.github.io/Myrrlycoolsite/Img/Jesus.jpeg')";
+img.src = "https://crazymemesmaker.github.io/Myrrlycoolsite/Img/" + files[Math.floor(Math.random() * 102)];   
+group1.appendChild(img);
+}
+
+//create text
+var id = 0;
+for (let i = 0; i < 50; i++) {
+id++;
+var p = document.createElement("p");
+p.style.position = "absolute";
+p.style.top = Math.floor(Math.random() * 5000);
+p.style.left = Math.floor(Math.random() * 500);
+p.style.width = Math.floor(Math.random() * 700);
+p.style.height = Math.floor(Math.random() * 500);
+p.style.zIndex = Math.floor(Math.random() * 5 + 3);
+p.style.fontFamily = "Helvetica, 'Trebuchet MS', Verdana, sans-serif";
+if (Math.floor(Math.random() * 3) == 1) {
+p.class = "anim";
+}
+p.id = id;
+p.innerText = txt[Math.floor(Math.random() * 21)];
+var colors = [
+"pink",
+"brown",
+"yellow",
+"orange",
+"purple",
+"green",
+];
+p.style.color = colors[Math.floor(Math.random() * 6)];
+p.style.fontSize = Math.floor(Math.random() * 90);
+group2.appendChild(p);
+}
+
+//alert
+setTimeout(function alertu() {
+alert("*💩💩*WE DON'T HAVE TIME FAT KABAB EATER 🤰, IT'S TIME TO PROTECT THE MOTHERLAND FROM THE WHATEVER IS ON THE DARK SIDE OF THE YING-YONG 💩💩 12346@£+■°♡☆》○♡`}~‽٪‰(it's just a joke lol or not AH)/nfunction setup(){var copy='copy me';document.write(copy);}**");
+},1000);
+
+</script>
+</body>
+</html>
